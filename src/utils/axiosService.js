@@ -3,7 +3,7 @@ import axios from "axios";
 import { useLoader } from "../context/LoaderContext.js";
 import { useToast } from "../context/ToastContext.js";
 
-const BASEPATH = "http://localhost:5000/app";
+const BASEPATH = "https://rfq-api.onrender.com/app";
 
 const buildURL = (path) => `${BASEPATH}${path.startsWith("/") ? "" : "/"}${path}`;
 
