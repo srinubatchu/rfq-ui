@@ -21,7 +21,7 @@ const Header = ({ onMenuClick }) => {
   const fetchUnreadCount = useCallback(async () => {
     if (!localStorage.getItem("email")) return; // avoid after logout
     try {
-      const res = await getCall(`/v1/rfqs/unread-notifications-count`);
+      const res = await getCall(`/v1/notifications/unread-notification-count`);
       if (res?.status === "success") {
         setUnreadCount(res.data);
       }
@@ -50,7 +50,7 @@ const Header = ({ onMenuClick }) => {
     if (!userEmail) return;
     setShowDropdown(true);
     try {
-      const res = await getCall(`/v1/rfqs/notifications`);
+      const res = await getCall(`/v1/notifications/`);
       if (res?.status === "success") {
         setNotifications(res.data || []);
       }
@@ -69,7 +69,7 @@ const Header = ({ onMenuClick }) => {
 
     if (unreadIds.length > 0) {
       try {
-        await postCall(`/v1/rfqs/mark-notifications-read`, {
+        await postCall(`/v1/notifications/`, {
           notifications: unreadIds,
         });
         setUnreadCount(0);

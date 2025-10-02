@@ -1,70 +1,89 @@
-# Getting Started with Create React App
+# RFQ Management System - Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A **React + Tailwind CSS** frontend for the RFQ Management System. This UI allows buyers and sellers to interact with the backend API, submit bids, view RFQs, and receive real-time notifications.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Table of Contents
 
-### `npm start`
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Project Structure](#project-structure)
+- [Installation](#installation)
+- [Running the Application](#running-the-application)
+- [Screenshots](#screenshots)
+- [Future Enhancements](#future-enhancements)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Features
 
-### `npm test`
+- View RFQ dashboard.
+- Buyers can create RFQs and award bids.
+- Sellers can submit bids and counteroffers.
+- Real-time notifications displayed in header.
+- Unread notification badge and dropdown.
+- Role-based UI elements (Buyer / Seller / Admin).
+- Responsive layout using Tailwind CSS.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## Tech Stack
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Frontend:** React, Tailwind CSS  
+- **State Management:** React Hooks  
+- **Realtime:** Socket.io-client  
+- **HTTP Client:** Axios  
+- **Version Control:** Git, GitHub  
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Project Structure
 
-### `npm run eject`
+```text
+client/
+├─ src/
+│  ├─ components/       # Reusable UI components (Button, Table, Header, etc.)
+│  ├─ pages/            # React pages (RFQ dashboard, RFQ details)
+│  ├─ utils/            # Axios service, Socket manager
+│  ├─ App.jsx
+│  └─ index.jsx
+├─ package.json
+└─ tailwind.config.js
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Installation
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Frontend
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+# Navigate to frontend folder
+cd client
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# Install dependencies
+npm install
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Running the Application
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+**Frontend URL:** [http://localhost:3000](http://localhost:3000)
 
-### Code Splitting
+### Steps to Run
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+1. Make sure you have installed all dependencies as per the [Installation](#installation) section.
+2. Start the frontend:
 
-### Analyzing the Bundle Size
+```bash
+cd client
+npm start      # Runs the React app on http://localhost:3000
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Future Enhancements
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Add filtering and search for RFQs in the UI.
+- Improve UI/UX with charts and dashboards.
+- Implement push notifications.
+- Role-specific dashboards with analytics.
+- Pagination for RFQ lists.
+- Mobile-first responsiveness improvements.
+- Deploy frontend on cloud services (e.g., Vercel, Netlify).

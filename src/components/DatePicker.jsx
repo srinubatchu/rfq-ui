@@ -7,7 +7,7 @@ const DatePickerInput = ({
     onChange,       // callback to parent
     placeholder = "Select date",
     showTimeSelect = false,
-    dateFormat = "dd/MM/yyyy",
+    dateFormat = "dd-MM-yyyy",
     minDate = null,
     maxDate = null,
 }) => {
@@ -45,9 +45,10 @@ const DatePickerInput = ({
                 placeholderText={placeholder}
                 showTimeSelect={showTimeSelect}
                 timeFormat="HH:mm"
-                dateFormat={showTimeSelect ? "dd/MM/yyyy HH:mm" : dateFormat}
+                dateFormat={showTimeSelect ? "dd-MM-yyyy HH:mm" : dateFormat}
                 minDate={minDate}
                 maxDate={maxDate}
+                onKeyDown={(e) => e.preventDefault()}
                 className="w-full h-[42px] border border-gray-300 rounded p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 wrapperClassName="w-full"
             />

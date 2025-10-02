@@ -79,10 +79,10 @@ const CreateRFQForm = () => {
 
   const productDetailsFields = [
     { label: "Product Name", name: "productName", placeholder: "Enter Product Name", required: true },
-    { label: "Quantity", type: "number", name: "quantity", placeholder: "Enter Quantity", required: true },
+    { label: "Quantity", type: "test", name: "quantity", placeholder: "Enter Quantity", required: true ,formatPattern : "integersOnly"},
     { label: "Unit", type: "select", name: "unit", options: units, placeholder: "Select Unit", required: true },
-    { label: "Base Price", type: "number", name: "basePrice", placeholder: "Enter Base Price" },
-    { label: "Delivery Date", type: "date", name: "deliveryDate", placeholder: "Select Delivery Date", required: true },
+    { label: "Base Price", type: "text", name: "basePrice", placeholder: "Enter Base Price" ,formatPattern : "integersOnly" },
+    { label: "Delivery Date", type: "date", name: "deliveryDate", placeholder: "Select Delivery Date", required: true ,minDate : new Date()},
   ];
 
   const additionalDetailsFields = [

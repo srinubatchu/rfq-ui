@@ -25,7 +25,7 @@ const FormField = ({
         onChange={onChange}
         placeholder={placeholder || "Select date"}
         showTimeSelect={rest.showTimeSelect || false}
-        dateFormat={rest.dateFormat || "dd/MM/yyyy"}
+        dateFormat={rest.dateFormat || "dd-MM-yyyy"}
         minDate={rest.minDate || null}
         maxDate={rest.maxDate || null}
         {...rest}
