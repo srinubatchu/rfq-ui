@@ -88,15 +88,9 @@ const Header = ({ onMenuClick }) => {
 
   const onClickLogOut = async () => {
     try {
-      const res = await postCall("/v1/auth/logout");
-      if (res.status === "success") {
-        // ✅ Cleanup before redirect
-        removeSocketEvent("notificationTrigger", fetchUnreadCount);
-        setUnreadCount(0);
-        setNotifications([]);
-        localStorage.clear();
-        navigate("/login");
-      }
+
+      localStorage.clear();
+      navigate("/login");
     } catch (err) {
       console.error("Logout failed:", err);
     }
@@ -163,9 +157,8 @@ const Header = ({ onMenuClick }) => {
                     return (
                       <li
                         key={n._id}
-                        className={`p-3 text-sm border-b last:border-none ${
-                          isUnread ? "bg-gray-100 font-semibold" : "bg-white"
-                        }`}
+                        className={`p-3 text-sm border-b last:border-none ${isUnread ? "bg-gray-100 font-semibold" : "bg-white"
+                          }`}
                       >
                         {n.notification}
                         <div className="text-xs text-gray-400">
