@@ -36,28 +36,35 @@ function App() {
 
   return (
     <Router>
-      <Routes>
-        {/* Public Routes */}
-        <Route path="/login" element={<Login />} />
-        <Route path="/set-password" element={<SetPassword />} />
+     <Routes>
+  {/* Public Routes */}
+  <Route path="/login" element={<Login />} />
+  <Route path="/set-password" element={<SetPassword />} />
 
-        {/* Protected Routes with Layout */}
-        <Route
-          element={
-            <ProtectedRoute>
-              <AppLayout />
-            </ProtectedRoute>
-          }
-        >
-          <Route path="/create-rfq" element={<CreateRFQForm />} />
-          <Route path="/rfq-summary" element={<RFQSummary />} />
-          <Route path="/bid-details/:rfqId" element={<BidDetails />} />
-          <Route path="/users" element={<UserManagement />} />
-        </Route>
+  {/* Protected Routes */}
+  <Route
+    element={
+      <ProtectedRoute>
+        <AppLayout />
+      </ProtectedRoute>
+    }
+  >
+    {/* Default after login */}
+    <Route index element={<Navigate to="/rfq-summary" replace />} />
 
-        {/* Catch-all */}
-        <Route path="*" element={<Navigate to="/login" replace />} />
-      </Routes>
+    <Route path="/create-rfq" element={<CreateRFQForm />} />
+    <Route path="/rfq-summary" element={<RFQSummary />} />
+    <Route path="/bid-details/:rfqId" element={<BidDetails />} />
+    <Route path="/users" element={<UserManagement />} />
+
+    {/* Not found AFTER login */}
+    <Route path="*" element={<Navigate to="/rfq-summary" replace />} />
+  </Route>
+
+  {/* Catch-all BEFORE login */}
+  <Route path="*" element={<Navigate to="/login" replace />} />
+</Routes>
+
     </Router>
   );
 }
