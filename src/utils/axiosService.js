@@ -4,6 +4,7 @@ import { useLoader } from "../context/LoaderContext.js";
 import { useToast } from "../context/ToastContext.js";
 
 const BASEPATH = "https://rfq-api.onrender.com/app";
+// const BASEPATH = "https://localhost:5000/app";
 
 const buildURL = (path) => `${BASEPATH}${path.startsWith("/") ? "" : "/"}${path}`;
 

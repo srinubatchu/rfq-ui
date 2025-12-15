@@ -3,11 +3,15 @@ import { Link, useLocation } from "react-router-dom";
 
 const Sidebar = ({ isOpen, onClose }) => {
   const location = useLocation();
+  const userRole = useMemo(() => localStorage.getItem("role"), []);
 
   const menuItems = [
     { label: "RFQ Summary", path: "/rfq-summary" },
-    { label : "User Mangement" , path : "/users"}
   ];
+
+  if(userRole =="admin"){
+    menuItems.push({ label : "User Mangement" , path : "/users"})
+  }
 
   return (
     <>
