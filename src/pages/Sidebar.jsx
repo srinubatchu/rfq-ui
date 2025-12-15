@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { Link, useLocation , useMemo } from "react-router-dom";
 
 const Sidebar = ({ isOpen, onClose }) => {
