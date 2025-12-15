@@ -58,11 +58,11 @@ function App() {
     <Route path="/users" element={<UserManagement />} />
 
     {/* Not found AFTER login */}
-    <Route path="*" element={<Navigate to="/rfq-summary" replace />} />
+    <Route path="*" element={<RFQSummary />} />
   </Route>
 
   {/* Catch-all BEFORE login */}
-  <Route path="*" element={<Navigate to="/login" replace />} />
+  <Route path="*" element={<Login />} />
 </Routes>
 
     </Router>
